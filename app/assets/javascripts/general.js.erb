@@ -1,0 +1,90 @@
+$(document).ready(function() {
+
+  $.extend( $.fn.dataTableExt.oStdClasses, {
+	"sSortAsc": "header headerSortDown",
+	"sSortDesc": "header headerSortUp",
+	"sSortable": "header"
+} );
+
+
+  $('#rezerwacje').dataTable({
+  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+  "sPaginationType": "bootstrap",
+
+
+                     "oLanguage": {
+                        "sProcessing":   "Proszę czekać...",
+                        "sLengthMenu":   "Pokaż _MENU_ pozycji",
+                        "sZeroRecords":  "Nie znaleziono żadnych pasujących indeksów",
+                        "sInfo":         "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+                        "sInfoEmpty":    "Pozycji 0 z 0 dostępnych",
+                        "sInfoFiltered": "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+                        "sInfoPostFix":  "",
+                        "sSearch":       "Szukaj:",
+                        "sUrl":          "",
+                        "oPaginate": {
+                        "sFirst":    "Pierwsza",
+                        "sPrevious": "Poprzednia",
+                        "sNext":     "Następna",
+                        "sLast":     "Ostatnia"
+                        }
+                        }
+                
+                      });
+  $('#wycieczki').dataTable({
+  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+  "sPaginationType": "bootstrap",
+
+
+                     "oLanguage": {
+                        "sProcessing":   "Proszę czekać...",
+                        "sLengthMenu":   "Pokaż _MENU_ pozycji",
+                        "sZeroRecords":  "Nie znaleziono żadnych pasujących indeksów",
+                        "sInfo":         "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+                        "sInfoEmpty":    "Pozycji 0 z 0 dostępnych",
+                        "sInfoFiltered": "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+                        "sInfoPostFix":  "",
+                        "sSearch":       "Szukaj:",
+                        "sUrl":          "",
+                        "oPaginate": {
+                        "sFirst":    "Pierwsza",
+                        "sPrevious": "Poprzednia",
+                        "sNext":     "Następna",
+                        "sLast":     "Ostatnia"
+                        }
+                        }
+                
+                      });
+ $('#przystanki').dataTable({
+  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+  "sPaginationType": "bootstrap",
+
+
+                     "oLanguage": {
+                        "sProcessing":   "Proszę czekać...",
+                        "sLengthMenu":   "Pokaż _MENU_ pozycji",
+                        "sZeroRecords":  "Nie znaleziono żadnych pasujących indeksów",
+                        "sInfo":         "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+                        "sInfoEmpty":    "Pozycji 0 z 0 dostępnych",
+                        "sInfoFiltered": "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+                        "sInfoPostFix":  "",
+                        "sSearch":       "Szukaj:",
+                        "sUrl":          "",
+                        "oPaginate": {
+                        "sFirst":    "Pierwsza",
+                        "sPrevious": "Poprzednia",
+                        "sNext":     "Następna",
+                        "sLast":     "Ostatnia"
+                        }
+                        }
+                
+                      });
+
+$('<div class="input-prepend"><span class="add-on"><i class="icon-search"></i></span><input type="text" aria-controls"rezerwacje"> </div>').replaceAll('#rezerwacje_filter label');
+$('<div class="input-prepend"><span class="add-on"><i class="icon-search"></i></span><input type="text" aria-controls"wycieczki"> </div>').replaceAll('#wycieczki_filter label');
+$('<div class="input-prepend"><span class="add-on"><i class="icon-search"></i></span><input type="text" aria-controls"przystanki"> </div>').replaceAll('#przystanki_filter label');
+
+
+
+});
+

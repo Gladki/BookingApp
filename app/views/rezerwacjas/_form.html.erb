@@ -1,0 +1,44 @@
+<%= form_for @rezerwacja, :html => { :class => 'form-horizontal' } do |f| %>
+  
+  <div class="control-group">
+    <%= f.label :nazwa, :class => 'control-label' %>
+    <div class="controls">
+    <%= f.collection_select :nazwa, Wycieczka.find(:all, :order => "id desc", :limit => 10), :id, "combined_value" , :prompt => "Wybierz wycieczke" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :imie, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :imie, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nazwisko, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nazwisko, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Numer telefonu", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nrtelefonu, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label "Data urodzenia", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :dataUrodzenia, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Dodaj", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                rezerwacjas_index_path, :class => 'btn' %>
+  </div>
+<% end %>

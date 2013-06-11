@@ -1,0 +1,2 @@
+module PrzystaneksHelper
+end

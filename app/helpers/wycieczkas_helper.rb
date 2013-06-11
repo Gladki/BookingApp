@@ -1,0 +1,2 @@
+module WycieczkasHelper
+end
