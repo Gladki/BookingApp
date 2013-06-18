@@ -11,13 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130609130143) do
+ActiveRecord::Schema.define(:version => 20130609132258) do
 
   create_table "przystaneks", :force => true do |t|
     t.integer  "przystanek_id"
     t.string   "nazwa"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+  end
+
+  create_table "przystaneks_rezerwacjas", :force => true do |t|
+    t.integer "rezerwacja_id"
+    t.integer "przystanek_id"
   end
 
   create_table "rezerwacja_przystanek", :force => true do |t|
@@ -43,6 +48,13 @@ ActiveRecord::Schema.define(:version => 20130609130143) do
     t.string   "nrtelefonu"
     t.date     "dataUrodzenia"
     t.date     "datawycieczki"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "rezerwacjas_przystaneks", :force => true do |t|
+    t.integer  "rezerwacja_id"
+    t.integer  "przystanek_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

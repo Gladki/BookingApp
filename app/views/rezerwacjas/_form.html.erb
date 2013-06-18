@@ -1,44 +1,39 @@
-<%= form_for @rezerwacja, :html => { :class => 'form-horizontal' } do |f| %>
-  
-  <div class="control-group">
-    <%= f.label :nazwa, :class => 'control-label' %>
-    <div class="controls">
-    <%= f.collection_select :nazwa, Wycieczka.find(:all, :order => "id desc", :limit => 10), :id, "combined_value" , :prompt => "Wybierz wycieczke" %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :imie, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :imie, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :nazwisko, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nazwisko, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Numer telefonu", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :nrtelefonu, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label "Data urodzenia", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :dataUrodzenia, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="form-actions">
+<%= simple_form_for @rezerwacja, :html => { :class => 'form-inline' } do |f| %>
+
+    <% @przystanek = Przystanek.find(:all, :order => "id desc", :limit => 10) %>
+     
+      <div class="span3">
+     <h5>Dane uczestnika</h3>        
+
+      <%= f.input :imie  ,label: "Imię", as: :string %>
+      <%= f.input :nazwisko , as: :string  %>
+      <%= f.input :dataUrodzenia, label: "Data urodzenia", as: :string %>
+      <%= f.input :nrtelefonu, label: "Telefon" , as: :tel  %>
+
+       </div> 
+       <div class="span3">
+        <h5>Dane wycieczki</h5>
+         
+      <%= f.input :nazwa, label: "Wycieczka" , collection: Wycieczka.find(:all, :order => "id desc", :limit => 10), label_method: "combined_value", value_method: :id,  :prompt => "Wybierz wycieczkę" %> 
+
+       <%= f.input :przystanek_ids, label: "Przystanek" ,  collection: @przystanek, label_method: "combined_value", value_method: :id,  :prompt => "Wybierz przystanek" %> 
+
+       </div>
+
+       <div class="span3">
+        <h5>Dane dodatkowe</h5>
+       <%= f.input :email , label: "Adres Mailowy" ,as: :email  %>
+
+       </div>
+       <div class="span12">
+          <div class="form-actions ">
+
     <%= f.submit "Dodaj", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 rezerwacjas_index_path, :class => 'btn' %>
-  </div>
+       </div>
+       </div>
+
 <% end %>
+
+

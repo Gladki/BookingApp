@@ -1,28 +1,9 @@
-<%= form_for @wycieczka, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @wycieczka, :html => { :class => 'form-inline' } do |f| %>
  
-  <div class="control-group">
-    <%= f.label :nazwa, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select(:nazwa, options_for_select([
-      ['Praga', 'Praga'], 
-      ['Praga Nocą', 'Praga Nocą'], 
-      ['Skalne Miasto', 'Skalne Miasto'], 
-      ['Szwajcaria Saksońska', 'Szwajcaria Saksońska'], 
-      ['Drezno', 'Drezno'], 
-      ['Morawski Kras', 'Morawski Kras'], 
-      ['Liberec', 'Liberec'], 
-      ['Wiedeń', 'Wiedeń'], 
-      ['Czeski Raj', 'Czeski Raj']],
-      1) , :prompt => "Wybierz miejsce wycieczki", :class => 'select_field' ) %>
-    </div>
-  </div>
+      <%= f.input :nazwa, collection: [ 'Praga','Praga Nocą','Skalne Miasto','Szwajcaria Saksońska', 'Drezno','Morawski Kras','Liberec', 'Wiedeń','Czeski Raj'], label: "Miejsce wycieczki", :prompt => "Wybierz miejsce wycieczki" %>
+    
  
- <div class="control-group">
-    <%= f.label :data, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :data, :class => 'text_field' %>
-    </div>
-  </div>
+      <%= f.input :data, as: :string, :class => 'text_field' %>
 
   <div class="form-actions">
     <%= f.submit "Dodaj", :class => 'btn btn-primary' %>

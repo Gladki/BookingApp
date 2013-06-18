@@ -45,9 +45,10 @@ class RezerwacjasController < ApplicationController
     respond_to do |format|
       if @rezerwacja.save
         format.html { redirect_to @rezerwacja, notice: 'Rezerwacja was successfully created.' }
-        format.json { render json: @rezerwacja, status: :created, location: @rezerwacja }
+        format.json {  render json: @rezerwacja, status: :created, location: @rezerwacja }
       else
-        format.html { render action: "new" }
+        # @test = "warning"
+        format.html { render action: "new"}
         format.json { render json: @rezerwacja.errors, status: :unprocessable_entity }
       end
     end
