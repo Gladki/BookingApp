@@ -4,6 +4,10 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+# AUTHORYZACJA
+gem 'devise'
+gem 'cancan'
+
 
 gem 'sqlite3'
 gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'

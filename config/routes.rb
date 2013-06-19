@@ -2,6 +2,11 @@ BookingApp::Application.routes.draw do
   
 
 
+  resources :roles
+
+
+  devise_for :users
+  resources :users
   root :to => "rezerwacjas#index"
   #PRZYSTANEK
   match 'przystanki' => "przystaneks#index", :as => 'przystaneks_index'
