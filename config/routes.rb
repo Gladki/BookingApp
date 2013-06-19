@@ -4,11 +4,11 @@ BookingApp::Application.routes.draw do
 
   root :to => "rezerwacjas#index"
   #PRZYSTANEK
-  match 'przystanek' => "przystaneks#index", :as => 'przystaneks_index'
-  match 'przystanek/nowa' => "przystaneks#new", :as => 'new_przystanek'
+  match 'przystanki' => "przystaneks#index", :as => 'przystaneks_index'
+  match 'przystanek/nowy' => "przystaneks#new", :as => 'new_przystanek'
   match 'przystanek/create' => "przystaneks#create", :as => 'przystaneks'
   #WYCIECZKA
-  match 'wycieczka' => "wycieczkas#index", :as => 'wycieczkas_index'
+  match 'wycieczki' => "wycieczkas#index", :as => 'wycieczkas_index'
   match 'wycieczka/nowa' => "wycieczkas#new", :as => 'new_wycieczka'
   match 'wycieczka/create' => "wycieczkas#create", :as => 'wycieczkas'
   match 'wycieczka/:id/lista' => "wycieczkas#lista", :as => 'lista_rezerwacji'
