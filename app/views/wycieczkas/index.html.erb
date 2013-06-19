@@ -1,12 +1,12 @@
-<div class="span9">
     <%- model_class = Wycieczka -%>
+<div class="span9">
 <div class="page-header">
-  <h3>Lista wycieczek</h3>
+  <blockquote><p><big>Lista wycieczek</big></p></blockquote>
 </div>
 <table id="wycieczki" class="table table-striped">
   <thead>
     <tr>
-    <th><%= model_class.human_attribute_name(:id) %></th>
+    <th>Numer wycieczki</th>
       <th><%= model_class.human_attribute_name(:nazwa) %></th>
       <th><%= model_class.human_attribute_name(:data) %></th>
 
@@ -16,26 +16,32 @@
   <tbody>
     <% @wycieczkas.each do |wycieczka| %>
       <tr>
-        <td><%= link_to wycieczka.id, wycieczka_path(wycieczka) %></td>
+        <td><%= link_to "#{wycieczka.id}/#{Wycieczka.find_by_id(wycieczka.id).created_at.year}", wycieczka_path(wycieczka) %></td>
 
         <td><%= wycieczka.nazwa %></td>
         <td><%= wycieczka.data %></td>
 
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_wycieczka_path(wycieczka), :class => 'btn btn-mini btn-success' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        <td style="width:15%;">
+          <%= link_to raw("<i class=\"icon-plus\"></i>"),
+                      dodatkowa_rezerwacja_path(wycieczka), :class => 'btn btn-mini btn-primary', :title => "Dodaj rezerwacje" %>
+          <%= link_to raw("<i class=\"icon-list\"></i>"),
+                      lista_rezerwacji_path(wycieczka), :class => 'btn btn-mini btn-warning', :title => "Lista wycieczki" %>
+          <%= link_to raw("<i class=\"icon-edit\"></i>"),
+                      edit_wycieczka_path(wycieczka), :class => 'btn btn-mini btn-success', :title => "Podgląd rezerwacji" %>
+          <%= link_to raw("<i class=\"icon-remove\"></i>"),
                       wycieczka_path(wycieczka),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Jesteś pewien?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => 'btn btn-mini btn-danger',
+                      :title => "Usuń wycieczkę" %>
+
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to raw("<i class=\"icon-plus\"></i>  Dodaj nową wycieczkę"),
             new_wycieczka_path,
             :class => 'btn btn-primary' %>
 

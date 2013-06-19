@@ -1,0 +1,59 @@
+<%= simple_form_for @rezerwacja, :html => { :class => 'form-inline' } do |f| %>
+<% id_wycieczki = Rezerwacja.find_by_id(params[:id]).nazwa %>
+       <% @przystanek = Przystanek.find(:all, :order => "id desc", :limit => 10) %>
+
+    <% rezerwacja = Rezerwacja.find(params[:id]) %>
+     
+      <div class="span3">
+     <h5>Dane uczestnika</h5>        
+
+      <%= f.input :imie ,label: "Imię", as: :string %>
+      <%= f.input :nazwisko , as: :string  %>
+      <%= f.input :dataUrodzenia, label: "Data urodzenia", as: :string %>
+      <%= f.input :nrtelefonu, label: "Telefon" , 
+                  :input_html => { :value => Rezerwacja.find_by_id(params[:id]).nrtelefonu}, as: :tel  %>
+
+       </div> 
+       <div class="span3">
+        <h5>Dane wycieczki</h5>
+         
+      <%= f.input :nazwa, label: "Wycieczka", collection: Wycieczka.find(:all, :conditions => {:id => rezerwacja.nazwa}),
+                        label_method: "combined_value", 
+                        value_method: :id,
+                        :prompt => false %> 
+
+
+
+      <% if  rezerwacja.przystaneks.length != 0 %>
+        <% @przystanek2 = rezerwacja.przystaneks %>
+        <%= f.input :przystanek_ids, label: "Przystanek", 
+                   collection: @przystanek2, 
+                   label_method: "nazwa", 
+                   value_method: :id,  
+                   :prompt => false %> 
+      <% else %>
+        <%= f.input :przystanek_ids, label: "Przystanek" ,
+                    collection: @przystanek, 
+                    label_method: "combined_value", 
+                    value_method: :id,  
+                    :prompt => "Wybierz przystanek" %> 
+      <% end %>
+      </div>
+
+       <div class="span3">
+        <h5>Dane dodatkowe</h5>
+       <%= f.input :email , label: "Adres Mailowy" , as: :email  %>
+
+       </div>
+       <div class="span12">
+          <div class="form-actions ">
+
+    <%= f.submit "Zatwierdź", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                rezerwacjas_index_path, :class => 'btn' %>
+       </div>
+       </div>
+
+<% end %>
+
+

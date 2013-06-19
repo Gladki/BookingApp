@@ -2,15 +2,14 @@
 
 <%- model_class = Rezerwacja -%>
 <div class="page-header">
-   <blockquote><p><big>Lista rezerwacji</big></p> </blockquote>
+   <blockquote><p><big>Lista uczestników wycieczki: <%= FindWycieczkaByID(params[:id]).humanize %></big></p> </blockquote>
 </div>
 <table id="rezerwacje" class="table table-striped">
   <thead>
     <tr>
       <th>Numer rezerwacji</th>
-      <th>Nazwa wycieczki</th>
-      <th>Imię</th>
-       <th><%= model_class.human_attribute_name(:nazwisko) %></th>
+      <th><%= model_class.human_attribute_name(:imie) %></th>
+      <th><%= model_class.human_attribute_name(:nazwisko) %></th>
       <th>Numer telefonu</th>
       <th>Data urodzenia</th>
 
@@ -21,16 +20,14 @@
   <tbody>
     <% @rezerwacjas.each do |rezerwacja| %>
       <tr>
-         <td><%= link_to "BT/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}", rezerwacja_pokaz_path(rezerwacja) %></td>
-
-        <td><%= link_to "#{FindWycieczkaByID(rezerwacja.nazwa)}", lista_rezerwacji_path(rezerwacja.nazwa) %></td>
+        <td><%= link_to "BT/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}", rezerwacja_pokaz_path(rezerwacja) %></td>
         <td><%= rezerwacja.imie %> </td>
         <td><%= rezerwacja.nazwisko %></td>
         <td><%= rezerwacja.nrtelefonu %></td>
         <td><%= rezerwacja.dataUrodzenia %></td>
         <td style="width:11%">
-          <%= link_to raw("<i class=\"icon-plus\"></i>"),
-                      nowa_osoba_path(rezerwacja), :class => 'btn btn-mini btn-primary', :title => "Dodaj rezerwacje" %>
+     <%= link_to raw("<i class=\"icon-plus\"></i>"),
+                      dodatkowa_rezerwacja_path(rezerwacja), :class => 'btn btn-mini btn-primary', :title => "Dodaj rezerwacje" %>
           <%= link_to raw("<i class=\"icon-list\"></i>"),
                         rezerwacja_pokaz_path(rezerwacja), :class => 'btn btn-mini btn-warning' %>    
           <%= link_to raw("<i class=\"icon-edit\"></i>"),
@@ -47,7 +44,7 @@
   </tbody>
 </table>
 
-<%= link_to raw("<i class=\"icon-plus\"></i> Dodaj nową rezerwację"),
+<%= link_to raw("<i class=\"icon-plus\"></i> Dodaj nowego uczestnika"),
             new_rezerwacja_path,
             :class => 'btn btn-primary' %>
 

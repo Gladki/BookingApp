@@ -1,0 +1,16 @@
+<%- model_class = Rezerwacja -%>
+     
+
+
+<div class="span12">
+	
+<div class="page-header">
+  <blockquote><p><big>
+  	Nowa rezerwacja dla wycieczki:
+   <%= Wycieczka.find_by_id(params[:id]).nazwa + " " + 
+   	   Wycieczka.find_by_id(params[:id]).data.strftime("%d.%m.%Y r.")  %>
+   	</big></p></blockquote>
+</div>
+</div>
+
+<%= render :partial => 'form_const' %>

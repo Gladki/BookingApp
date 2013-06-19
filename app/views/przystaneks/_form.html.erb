@@ -1,9 +1,15 @@
+<div class="span3">
 <%= simple_form_for @przystanek, :html => { :class => 'form-inline' } do |f| %>
-      <%= f.input :nazwa, label: "Nazwa przystanku", :class => 'text_field' %>
+     
 
-  <div class="form-actions">
+      <%= f.input :nazwa, label: "Nazwa przystanku", :class => 'text_field' %>
+</div>
+	<div class="span12">
+	<div class="form-actions">
     <%= f.submit "Dodaj", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 przystaneks_index_path, :class => 'btn' %>
-  </div>
+	</div>
 <% end %>
+</div>
+

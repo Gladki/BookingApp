@@ -3,7 +3,7 @@ class Wycieczka < ActiveRecord::Base
   validates_presence_of :data, on: :create, message: "Uzupelnij date"
   validates_presence_of :nazwa, on: :create, message: "Wpisz nazwe wycieczki"
 def combined_value
-  "#{self.nazwa} #{self.data.strftime("%d-%m-%Y")} r."
+  "#{self.nazwa} #{self.data.strftime("%d.%m.%Y")} r."
 end
 
 end

@@ -10,6 +10,14 @@ class WycieczkasController < ApplicationController
     end
   end
 
+  def lista 
+    @rezerwacjas = Rezerwacja.find(:all, :conditions => {:nazwa => params[:id]})
+
+    respond_to do |format|
+      format.html # lista.html.erb
+      format.json { render json: @rezerwacjas }
+    end
+  end
   # GET /wycieczkas/1
   # GET /wycieczkas/1.json
   def show

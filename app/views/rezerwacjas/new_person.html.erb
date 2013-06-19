@@ -1,0 +1,19 @@
+<%- model_class = Rezerwacja -%>
+     
+<div class="span12">
+	
+<div class="page-header">
+  <blockquote><p>
+  	<big>
+  	Nowa rezerwacja na uczestnika: 
+	  	<%= 
+	  	Rezerwacja.find_by_id(params[:id]).imie + " " +
+	  	Rezerwacja.find_by_id(params[:id]).nazwisko
+
+	  	%>
+
+  	</big></p></blockquote>
+</div>
+</div>
+
+<%= render :partial => 'form_person' %>

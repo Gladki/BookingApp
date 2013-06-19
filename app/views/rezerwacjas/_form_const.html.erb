@@ -1,9 +1,9 @@
-      <div class="span3">
 <%= simple_form_for @rezerwacja, :html => { :class => 'form-inline' } do |f| %>
 
     <% @przystanek = Przystanek.find(:all, :order => "id desc", :limit => 10) %>
      
-     <h5>Dane uczestnika</h3>        
+      <div class="span3">
+     <h5>Dane uczestnika</h5>        
 
       <%= f.input :imie  ,label: "Imię", as: :string %>
       <%= f.input :nazwisko , as: :string  %>
@@ -14,7 +14,7 @@
        <div class="span3">
         <h5>Dane wycieczki</h5>
          
-      <%= f.input :nazwa, label: "Wycieczka" , collection: Wycieczka.find(:all, :order => "id desc", :limit => 10), label_method: "combined_value", value_method: :id,  :prompt => "Wybierz wycieczkę" %> 
+      <%= f.input :nazwa, label: "Wycieczka", disabled: true, collection: Wycieczka.find(:all, :conditions => {:id => params[:id]}), label_method: "combined_value", value_method: :id, :prompt => false%> 
 
        <%= f.input :przystanek_ids, label: "Przystanek" ,  collection: @przystanek, label_method: "combined_value", value_method: :id,  :prompt => "Wybierz przystanek" %> 
 
@@ -32,8 +32,8 @@
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 rezerwacjas_index_path, :class => 'btn' %>
        </div>
+       </div>
 
 <% end %>
-       </div>
 
 

@@ -1,7 +1,7 @@
 <div class="span9">
 <%- model_class = Przystanek -%>
 <div class="page-header">
-  <h3>Lista przystanków</h3>
+  <blockquote><p><big>Lista przystanków</big></p></blockquote>
 </div>
 <table id="przystanki" class="table table-striped">
   <thead>
@@ -19,21 +19,23 @@
 
         <td><%= przystanek.nazwa %></td>
 
-        <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_przystanek_path(przystanek), :class => 'btn btn-mini btn-success' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        <td style="width:12%">
+          <%= link_to raw("<i class=\"icon-edit\"></i>"),
+                      edit_przystanek_path(przystanek), :class => 'btn btn-mini btn-success', 
+                      :title => "Podgląd przystanku" %>
+          <%= link_to raw("<i class=\"icon-remove\"></i>"),
                       przystanek_path(przystanek),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Jesteś pewien?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :class => 'btn btn-mini btn-danger',
+                      :title => "Usuń przystanek" %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to raw("<i class=\"icon-plus\"></i> Dodaj nowy przystanek"),
             new_przystanek_path,
             :class => 'btn btn-primary' %>
  

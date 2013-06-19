@@ -1,5 +1,7 @@
 <%- model_class = Wycieczka -%>
+<div class="span12">
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human %></h1>
+  <blockquote><p><big>Edytuj wycieczke numer: <%= params[:id] %>/<%= Wycieczka.find_by_id(params[:id]).created_at.year %></big></p></blockquote>
+</div>
 </div>
 <%= render :partial => 'form' %>

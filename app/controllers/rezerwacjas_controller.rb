@@ -32,6 +32,23 @@ class RezerwacjasController < ApplicationController
     end
   end
 
+  def new_const
+     @rezerwacja = Rezerwacja.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @rezerwacja }
+    end
+  end 
+  def new_person
+     @rezerwacja = Rezerwacja.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @rezerwacja }
+    end
+  end
+
   # GET /rezerwacjas/1/edit
   def edit
     @rezerwacja = Rezerwacja.find(params[:id])

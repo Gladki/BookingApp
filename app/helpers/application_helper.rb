@@ -1,9 +1,12 @@
 module ApplicationHelper
 
 def FindWycieczkaByID(id)
+	if id != nil
+		Wycieczka.find_by_id(id).nazwa + " " + Wycieczka.find_by_id(id).data.strftime("%d.%m.%Y r.")
+	else
+		"-"
+	end 
 
-	Wycieczka.find_by_id(id).data.strftime("%d.%m.%Y r.") + " " + Wycieczka.find_by_id(id).nazwa 
-	
 end
 
 end

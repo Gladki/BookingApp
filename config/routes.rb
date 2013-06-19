@@ -5,18 +5,21 @@ BookingApp::Application.routes.draw do
   root :to => "rezerwacjas#index"
   #PRZYSTANEK
   match 'przystanek' => "przystaneks#index", :as => 'przystaneks_index'
-  match 'przystanek/nowy' => "przystaneks#new", :as => 'new_przystanek'
+  match 'przystanek/nowa' => "przystaneks#new", :as => 'new_przystanek'
   match 'przystanek/create' => "przystaneks#create", :as => 'przystaneks'
   #WYCIECZKA
   match 'wycieczka' => "wycieczkas#index", :as => 'wycieczkas_index'
-  match 'wycieczka/nowy' => "wycieczkas#new", :as => 'new_wycieczka'
+  match 'wycieczka/nowa' => "wycieczkas#new", :as => 'new_wycieczka'
   match 'wycieczka/create' => "wycieczkas#create", :as => 'wycieczkas'
+  match 'wycieczka/:id/lista' => "wycieczkas#lista", :as => 'lista_rezerwacji'
   #REZERWACJA
-  match 'rezerwacja' => "rezerwacjas#index", :as => 'rezerwacjas_index'
-  match 'rezerwacja/nowy' => "rezerwacjas#new", :as => 'new_rezerwacja'
+  match 'rezerwacje' => "rezerwacjas#index", :as => 'rezerwacjas_index'
+  match 'rezerwacja/nowa' => "rezerwacjas#new", :as => 'new_rezerwacja'
   match 'rezerwacja/create' => "rezerwacjas#create", :as => 'rezerwacjas'
-  
-
+  match 'rezerwacja/wycieczka/:id' => "rezerwacjas#new_const", :as => 'dodatkowa_rezerwacja'
+  match 'rezerwacja/:id/nowa/osoba' => "rezerwacjas#new_person", :as => 'nowa_osoba'
+  match 'rezerwacja/:id' => "rezerwacjas#show", :as => 'rezerwacja_pokaz'
+  match 'rezerwacja/:id/edytuj' => "rezerwacjas#edit", :as => 'rezerwacja_edytuj'
   resources :wycieczkas
 
 
