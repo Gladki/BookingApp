@@ -2,12 +2,12 @@ BookingApp::Application.routes.draw do
   
 
 
+  root :to => "rezerwacjas#index"
   resources :roles
 
 
   devise_for :users
   resources :users
-  root :to => "rezerwacjas#index"
   #PRZYSTANEK
   match 'przystanki' => "przystaneks#index", :as => 'przystaneks_index'
   match 'przystanek/nowy' => "przystaneks#new", :as => 'new_przystanek'
