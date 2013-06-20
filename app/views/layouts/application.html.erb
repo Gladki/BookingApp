@@ -25,7 +25,17 @@
           <li><%= link_to raw("<i class=\"icon-time\"></i> Rezerwacje"), rezerwacjas_index_path %></li>
           <li><%= link_to raw("<i class=\"icon-road\"></i> Wycieczki"), wycieczkas_index_path %></li>
           <li><%= link_to raw("<i class=\"icon-flag\"></i> Przystanki"), przystaneks_index_path %></li>
+
         </ul>
+        <ul class="nav pull-right">
+
+          <% if current_user !=nil %>
+                      <li class="pull-right"><%= link_to raw("<i class=\"icon-share\"></i> Wyloguj"), wyloguj_path, :class => "pull-right" %></li>
+
+                    <% end %>          
+
+        </ul>
+
       </div>
 
     </div>
@@ -37,7 +47,11 @@
 
 
 </div>
+<% if current_user != nil  %>
   <blockquote class="pull-right">Witaj <%= current_user.username %></blockquote>
+  <% else %>
+ <blockquote class="pull-right"><%= link_to "Zaloguj", zaloguj_path %> | <%= link_to "Zarejestruj" , zarejestruj_path %></blockquote>
+  <% end %>
  <div class="container">
     <div class="row">
    <%= yield %>

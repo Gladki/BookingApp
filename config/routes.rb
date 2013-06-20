@@ -25,6 +25,11 @@ BookingApp::Application.routes.draw do
   match 'rezerwacja/:id/nowa/osoba' => "rezerwacjas#new_person", :as => 'nowa_osoba'
   match 'rezerwacja/:id' => "rezerwacjas#show", :as => 'rezerwacja_pokaz'
   match 'rezerwacja/:id/edytuj' => "rezerwacjas#edit", :as => 'rezerwacja_edytuj'
+  
+  #LOGOWANIE
+devise_scope :user do get "/wyloguj" => "devise/sessions#destroy" end
+devise_scope :user do get "/zaloguj" => "devise/sessions#new" ,:as => 'zaloguj' end
+match "/zarejestruj" => "users#new" ,:as => 'zarejestruj' 
   resources :wycieczkas
 
 
