@@ -1,7 +1,7 @@
 class RezerwacjasController < ApplicationController
   # GET /rezerwacjas
   # GET /rezerwacjas.json
-load_and_authorize_resource
+authorize_resource
   before_filter :authenticate_user!
   def index
     @rezerwacjas = Rezerwacja.all
@@ -37,10 +37,10 @@ load_and_authorize_resource
   def new_const
      @rezerwacja = Rezerwacja.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @rezerwacja }
-    end
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.json { render json: @rezerwacja }
+    # end
   end 
   def new_person
      @rezerwacja = Rezerwacja.new

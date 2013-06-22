@@ -12,11 +12,15 @@ BookingApp::Application.routes.draw do
   match 'przystanki' => "przystaneks#index", :as => 'przystaneks_index'
   match 'przystanek/nowy' => "przystaneks#new", :as => 'new_przystanek'
   match 'przystanek/create' => "przystaneks#create", :as => 'przystaneks'
+  match 'przystanek/:id/edytuj' => "przystaneks#edit", :as => 'edit_przystanek'
+  match 'przystanek/:id' => 'przystaneks#show', :as => 'przystanek' 
   #WYCIECZKA
   match 'wycieczki' => "wycieczkas#index", :as => 'wycieczkas_index'
   match 'wycieczka/nowa' => "wycieczkas#new", :as => 'new_wycieczka'
   match 'wycieczka/create' => "wycieczkas#create", :as => 'wycieczkas'
   match 'wycieczka/:id/lista' => "wycieczkas#lista", :as => 'lista_rezerwacji'
+  match 'wycieczka/:id' => 'wycieczkas#show', :as => 'wycieczka'
+  match 'wycieczka/:id/edytuj' => 'wycieczkas#edit', :as => 'edit_wycieczka'
   #REZERWACJA
   match 'rezerwacje' => "rezerwacjas#index", :as => 'rezerwacjas_index'
   match 'rezerwacja/nowa' => "rezerwacjas#new", :as => 'new_rezerwacja'
@@ -27,10 +31,10 @@ BookingApp::Application.routes.draw do
   match 'rezerwacja/:id/edytuj' => "rezerwacjas#edit", :as => 'rezerwacja_edytuj'
   
   #LOGOWANIE
-devise_scope :user do get "/wyloguj" => "devise/sessions#destroy" end
-devise_scope :user do get "/zaloguj" => "devise/sessions#new" ,:as => 'zaloguj' end
-match "/zarejestruj" => "users#new" ,:as => 'zarejestruj' 
-  resources :wycieczkas
+  devise_scope :user do get "/wyloguj" => "devise/sessions#destroy" end
+  devise_scope :user do get "/zaloguj" => "devise/sessions#new" ,:as => 'zaloguj' end
+  match "/zarejestruj" => "users#new" ,:as => 'zarejestruj' 
+resources :wycieczkas
 
 
   resources :przystaneks

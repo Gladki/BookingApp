@@ -27,7 +27,7 @@
         <td><%= rezerwacja.dataUrodzenia %></td>
         <td style="width:11%">
      <%= link_to raw("<i class=\"icon-plus\"></i>"),
-                      dodatkowa_rezerwacja_path(rezerwacja), :class => 'btn btn-mini btn-primary', :title => "Dodaj rezerwacje" %>
+                      nowa_osoba_path(rezerwacja), :class => 'btn btn-mini btn-primary', :title => "Dodaj rezerwacje" %>
           <%= link_to raw("<i class=\"icon-list\"></i>"),
                         rezerwacja_pokaz_path(rezerwacja), :class => 'btn btn-mini btn-warning' %>    
           <%= link_to raw("<i class=\"icon-edit\"></i>"),
