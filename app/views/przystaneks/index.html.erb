@@ -1,4 +1,4 @@
-<div class="span9">
+<div class="span12">
 <%- model_class = Przystanek -%>
 <div class="page-header">
   <blockquote><p><big>Lista przystanków</big></p></blockquote>
@@ -15,14 +15,17 @@
   <tbody>
     <% @przystaneks.each do |przystanek| %>
       <tr>
-        <td><%= link_to przystanek.id, przystanek_path(przystanek) %></td>
 
+        <td><%= przystanek.przystanek_id %></td>
         <td><%= przystanek.nazwa %></td>
 
         <td style="width:12%">
           <%= link_to raw("<i class=\"icon-edit\"></i>"),
                       edit_przystanek_path(przystanek), :class => 'btn btn-mini btn-success', 
                       :title => "Edycja przystanku" %>
+           <%= link_to raw("<i class=\"icon-search\"></i>"),
+                      przystanek_path(przystanek), :class => 'btn btn-mini btn-warning', 
+                      :title => "Podgląd przystanku" %>
           <%= link_to raw("<i class=\"icon-remove\"></i>"),
                       przystanek_path(przystanek),
                       :method => :delete,
@@ -40,6 +43,3 @@
             :class => 'btn btn-primary' %>
  
 </div>
- <div class="span3">
-        <h3>Opis</h3>
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum.     </div>

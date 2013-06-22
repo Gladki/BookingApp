@@ -1,3 +1,5 @@
+
+
 <div class="span12">
 <%- model_class = Rezerwacja -%>
 <div class="page-header">
@@ -19,8 +21,18 @@
   </thead>
   <tbody>
     <% @rezerwacjas.each do |rezerwacja| %>
-      <tr>
-         <td><%= link_to "BT/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}", rezerwacja_pokaz_path(rezerwacja) %></td>
+      
+    <% if rezerwacja.zaplacona == 1 
+
+        @class = "success"
+      else
+        @class = "error"
+      end
+
+     %>
+
+      <tr class="<%= @class %>">
+         <td><%= link_to "#{current_user.username[0..2]}/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}", rezerwacja_pokaz_path(rezerwacja) %></td>
 
         <td><%= link_to "#{FindWycieczkaByID(rezerwacja.nazwa)}", lista_rezerwacji_path(rezerwacja.nazwa) %></td>
         <td><%= rezerwacja.imie %> </td>

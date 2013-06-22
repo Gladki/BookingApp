@@ -7,6 +7,8 @@ class CreateRezerwacjas < ActiveRecord::Migration
       t.string :nazwisko
       t.string :email
       t.string :nrtelefonu
+      t.integer :zaplacona
+      t.string :uwagi
       t.date :dataUrodzenia
       t.date :datawycieczki
 

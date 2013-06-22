@@ -1,6 +1,6 @@
 class Rezerwacja < ActiveRecord::Base
   has_and_belongs_to_many :przystaneks
-  attr_accessible :nrtelefonu,:rezerwacja_id,:dataUrodzenia, :datawycieczki, :email, :imie, :nazwa, :nazwisko, :przystanek_ids
+  attr_accessible :nrtelefonu,:rezerwacja_id,:dataUrodzenia, :datawycieczki, :email, :imie, :nazwa, :nazwisko, :przystanek_ids, :uwagi, :zaplacona
 
 
   validates_presence_of :nrtelefonu, on: :create, message: "Nie moze byc puste"

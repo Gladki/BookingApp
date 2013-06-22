@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(:version => 20130619230404) do
     t.string   "nazwisko"
     t.string   "email"
     t.string   "nrtelefonu"
+    t.integer  "zaplacona"
+    t.string   "uwagi"
     t.date     "dataUrodzenia"
     t.date     "datawycieczki"
     t.datetime "created_at",    :null => false

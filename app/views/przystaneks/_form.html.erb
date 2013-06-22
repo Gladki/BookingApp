@@ -2,6 +2,7 @@
 <%= simple_form_for @przystanek, :html => { :class => 'form-inline' } do |f| %>
      
 
+      <%= f.input :przystanek_id, label: "Numer przystanku", :class => 'integer' %>
       <%= f.input :nazwa, label: "Nazwa przystanku", :class => 'text_field' %>
 </div>
 	<div class="span12">

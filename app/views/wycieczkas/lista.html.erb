@@ -7,6 +7,7 @@
 <table id="rezerwacje" class="table table-striped">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Numer rezerwacji</th>
       <th><%= model_class.human_attribute_name(:imie) %></th>
       <th><%= model_class.human_attribute_name(:nazwisko) %></th>
@@ -19,8 +20,19 @@
   </thead>
   <tbody>
     <% @rezerwacjas.each do |rezerwacja| %>
-      <tr>
-        <td><%= link_to "BT/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}", rezerwacja_pokaz_path(rezerwacja) %></td>
+
+        <% if rezerwacja.zaplacona == 1 
+
+        @class = "success"
+      else
+        @class = "error"
+      end
+
+     %>
+
+ <tr class="<%= @class %>">
+         <td><%= rezerwacja.przystaneks.first.id %></td>
+        <td><%= link_to "#{current_user.username[0..2]}/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}", rezerwacja_pokaz_path(rezerwacja) %></td>
         <td><%= rezerwacja.imie %> </td>
         <td><%= rezerwacja.nazwisko %></td>
         <td><%= rezerwacja.nrtelefonu %></td>
@@ -45,7 +57,7 @@
 </table>
 
 <%= link_to raw("<i class=\"icon-plus\"></i> Dodaj nowego uczestnika"),
-            new_rezerwacja_path,
+            dodatkowa_rezerwacja_path(params[:id]),
             :class => 'btn btn-primary' %>
 
 
