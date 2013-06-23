@@ -1,6 +1,6 @@
-class RolesController < ApplicationController
+ class RolesController < ApplicationController
 # load_and_authorize_resource
-  before_filter :authenticate_user!
+  # before_filter :authenticate_user!
 
   # GET /roles
   # GET /roles.json
