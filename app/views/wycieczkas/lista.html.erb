@@ -39,14 +39,17 @@
         <td><%= rezerwacja.dataUrodzenia %></td>
         <td style="width:11%">
      <%= link_to raw("<i class=\"icon-plus\"></i>"),
-                      nowa_osoba_path(rezerwacja), :class => 'btn btn-mini btn-primary', :title => "Dodaj rezerwacje" %>
+                      nowa_osoba_path(rezerwacja), :class => 'btn btn-mini btn-primary', :title => "Dodaj rezerwacje",
+                                                   :id => "add" %>
           <%= link_to raw("<i class=\"icon-list\"></i>"),
-                        rezerwacja_pokaz_path(rezerwacja), :class => 'btn btn-mini btn-warning' %>    
+                        rezerwacja_pokaz_path(rezerwacja), :class => 'btn btn-mini btn-warning',  :title => "Pokaż rezerwacje" ,:id => "show" %>    
           <%= link_to raw("<i class=\"icon-edit\"></i>"),
-                        rezerwacja_edytuj_path(rezerwacja), :class => 'btn btn-mini btn-success' %>         
+                        rezerwacja_edytuj_path(rezerwacja), :class => 'btn btn-mini btn-success',  :title => "Edytuj rezerwacje", :id => "edit" %>         
           <%= link_to raw("<i class=\"icon-remove\"></i>"),
                       rezerwacja_path(rezerwacja),
+                       :title => "Usuń rezerwacje",
                       :method => :delete,
+                      :id => "delete",
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Jesteś pewien?')) },
                       :class => 'btn btn-mini btn-danger',
                       :title => "Usuń rezerwacje" %>
