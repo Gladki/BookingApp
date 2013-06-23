@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 # AUTHORYZACJA
 gem 'devise'
 gem 'cancan'
+gem 'mysql2'
 # gem 'bootstrap-tooltip-rails'
 
 
