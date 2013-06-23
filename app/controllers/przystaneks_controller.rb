@@ -37,6 +37,7 @@ authorize_resource
   # GET /przystaneks/1/edit
   def edit
     @przystanek = Przystanek.find(params[:id])
+  
   end
 
   # POST /przystaneks
