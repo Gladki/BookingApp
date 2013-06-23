@@ -24,6 +24,15 @@
         <h5>Dane dodatkowe</h5>
        <%= f.input :email , label: "Adres Mailowy" ,as: :email  %>
       <%= f.input :updated_by, :as => :hidden, :input_html => { :value => current_user.id } %>
+   <%= f.input :zaplacona, label: "Zapłacona?" ,:as => :boolean %>   
+      <div class="btn-group" data-toggle="buttons-checkbox">
+      <button id="uwaga-btn" type="button" class="btn btn-warning">Uwagi</button>
+      </div>
+
+
+      <div id="uwagi" style="display:none">
+               <%= f.input_field :uwagi , label: "Uwagi", as: :text , size: "200", :style => "height:200px;" %>
+      </div>
 
        </div>
        <div class="span12">
