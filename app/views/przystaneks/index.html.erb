@@ -27,8 +27,8 @@
                       przystanek_path(przystanek), :class => 'btn btn-mini btn-warning', 
                       :title => "Podgląd przystanku" %>
           <%= link_to raw("<i class=\"icon-remove\"></i>"),
-                      przystanek_path(przystanek),
-                      :method => :delete,
+                      usun_przystanek_path(przystanek),
+                     
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Jesteś pewien?')) },
                       :class => 'btn btn-mini btn-danger',
                       :title => "Usuń przystanek" %>

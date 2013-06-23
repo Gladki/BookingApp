@@ -9,7 +9,7 @@
 	<div class="form-actions">
 		      <%= f.input :updated_by, :as => :hidden, :input_html => { :value => current_user.id } %>
 
-    <%= f.button :submit, "Dodaj", :class => 'btn btn-primary' %>
+    <%= f.submit "Zatwierdź", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 przystaneks_index_path, :class => 'btn' %>
 	</div>

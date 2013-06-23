@@ -14,6 +14,7 @@ BookingApp::Application.routes.draw do
   match 'przystanek/create' => "przystaneks#create", :as => 'przystaneks'
   match 'przystanek/:id/edytuj' => "przystaneks#edit", :as => 'przystanek_edytuj'
   match 'przystanek/:id' => 'przystaneks#show', :as => 'przystanek' 
+  match 'przystanek/:id/usun' => 'przystaneks#destroy', :as => 'usun_przystanek'
   #WYCIECZKA
   match 'wycieczki' => "wycieczkas#index", :as => 'wycieczkas_index'
   match 'wycieczka/nowa' => "wycieczkas#new", :as => 'new_wycieczka'
@@ -21,6 +22,8 @@ BookingApp::Application.routes.draw do
   match 'wycieczka/:id/lista' => "wycieczkas#lista", :as => 'lista_rezerwacji'
   match 'wycieczka/:id' => 'wycieczkas#show', :as => 'wycieczka'
   match 'wycieczka/:id/edytuj' => 'wycieczkas#edit', :as => 'edit_wycieczka'
+  match 'wycieczka/:id/usun' => 'wycieczkas#destroy', :as => 'usun_wycieczka'
+
   #REZERWACJA
   match 'rezerwacje' => "rezerwacjas#index", :as => 'rezerwacjas_index'
   match 'rezerwacja/nowa' => "rezerwacjas#new", :as => 'new_rezerwacja'

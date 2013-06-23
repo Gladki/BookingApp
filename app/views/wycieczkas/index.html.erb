@@ -31,8 +31,7 @@
           <%= link_to raw("<i class=\"icon-edit\"></i>"),
                       edit_wycieczka_path(wycieczka), :class => 'btn btn-mini btn-success', :title => "Podgląd rezerwacji" %>
           <%= link_to raw("<i class=\"icon-remove\"></i>"),
-                      wycieczka_path(wycieczka),
-                      :method => :delete,
+                      usun_wycieczka_path(wycieczka),
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Jesteś pewien?')) },
                       :class => 'btn btn-mini btn-danger',
                       :title => "Usuń wycieczkę" %>
