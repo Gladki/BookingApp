@@ -1,6 +1,6 @@
 <%= simple_form_for @rezerwacja, :html => { :class => 'form-inline' } do |f| %>
 
-    <% @przystanek = Przystanek.find(:all, :order => "id desc", :limit => 10) %>
+    <% @przystanek = Przystanek.find(:all, :order => "id desc") %>
      
       <div class="span3">
      <h5>Dane uczestnika</h5>        
