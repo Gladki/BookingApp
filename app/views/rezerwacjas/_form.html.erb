@@ -1,7 +1,7 @@
       <div class="span3">
 <%= simple_form_for @rezerwacja, :html => { :class => 'form-inline' } do |f| %>
 
-    <% @przystanek = Przystanek.find(:all, :order => "id desc", :limit => 10) %>
+    <% @przystanek = Przystanek.find(:all, :order => "id desc") %>
      
      <h5>Dane uczestnika</h3>        
 
@@ -26,15 +26,15 @@
        <%= f.input :email , label: "Adres Mailowy" ,as: :email  %>
        <%= f.input :zaplacona, label: "Zapłacona?" ,:as => :boolean %>   
       <div class="btn-group" data-toggle="buttons-checkbox">
-  <button id="uwaga-btn" type="button" class="btn btn-warning">Uwagi</button>
-</div>
+      <button id="uwaga-btn" type="button" class="btn btn-warning">Uwagi</button>
+      </div>
 
 
-        <div id="uwagi" style="display:none">
-                 <%= f.input_field :uwagi , label: "Uwagi", as: :text , size: "200", :style => "height:200px;" %>
-        </div>
+      <div id="uwagi" style="display:none">
+               <%= f.input_field :uwagi , label: "Uwagi", as: :text , size: "200", :style => "height:200px;" %>
+      </div>
 
-       </div>
+      </div>
        <div class="span12">
           <div class="form-actions ">
       <%= f.input :updated_by, :as => :hidden, :input_html => { :value => current_user.id } %>
