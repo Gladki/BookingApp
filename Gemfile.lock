@@ -39,6 +39,9 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-datepicker-rails (1.1.0.1)
       railties (>= 3.0)
+    bootstrap-tooltip-rails (0.1)
+      rails (>= 3.1)
+      thor
     builder (3.0.4)
     cancan (1.6.10)
     coffee-rails (3.2.2)
@@ -141,6 +144,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
+  bootstrap-tooltip-rails
   cancan
   coffee-rails (~> 3.2.1)
   devise

@@ -21,13 +21,13 @@
 
         <td style="width:12%">
           <%= link_to raw("<i class=\"icon-edit\"></i>"),
-                      przystanek_edytuj_path(przystanek), :class => 'btn btn-mini btn-success', :id => "edit",
+                      przystanek_edytuj_path(przystanek), :class => 'btn btn-mini btn-success', :rel => "edit",
                       :title => "Edycja przystanku" %>
            <%= link_to raw("<i class=\"icon-search\"></i>"),
-                      przystanek_path(przystanek), :class => 'btn btn-mini btn-warning', :id => "show",
+                      przystanek_path(przystanek), :class => 'btn btn-mini btn-warning', :rel => "show",
                       :title => "Podgląd przystanku" %>
           <%= link_to raw("<i class=\"icon-remove\"></i>"),
-                      usun_przystanek_path(przystanek), :id => "delete",
+                      usun_przystanek_path(przystanek), :rel => "delete",
                      
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Jesteś pewien?')) },
                       :class => 'btn btn-mini btn-danger',

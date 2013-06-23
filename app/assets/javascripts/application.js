@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap-tooltip
 //= require twitter/bootstrap
 //= require_tree .
 //= require dataTables/jquery.dataTables

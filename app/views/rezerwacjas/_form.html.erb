@@ -14,7 +14,7 @@
        <div class="span3">
         <h5>Dane wycieczki</h5>
          
-         <%= f.input :nazwa, label: "Wycieczka" , collection: Wycieczka.find(:all,  :order => "id desc", :limit => 10, :conditions => ['data <= ?', DateTime.now]), label_method: "combined_value", value_method: :id,  :prompt => "Wybierz wycieczkę" %> 
+         <%= f.input :nazwa, label: "Wycieczka" , collection: Wycieczka.find(:all,  :order => "id desc", :limit => 10, :conditions => ['data >= ?', DateTime.now]), label_method: "combined_value", value_method: :id,  :prompt => "Wybierz wycieczkę" %> 
 
 
        <%= f.input :przystanek_ids, label: "Przystanek" ,  collection: @przystanek, label_method: "combined_value", value_method: :id,  :prompt => "Wybierz przystanek" %> 
