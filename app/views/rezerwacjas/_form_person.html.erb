@@ -1,6 +1,6 @@
 <%= simple_form_for @rezerwacja, :html => { :class => 'form-inline' } do |f| %>
 <% id_wycieczki = Rezerwacja.find_by_id(params[:id]).nazwa %>
-       <% @przystanek = Przystanek.find(:all, :order => "id desc", :limit => 10) %>
+       <% @przystanek = Przystanek.find(:all, :order => "id desc") %>
 
     <% rezerwacja = Rezerwacja.find(params[:id]) %>
      
