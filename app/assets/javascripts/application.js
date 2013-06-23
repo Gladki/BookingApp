@@ -12,8 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
-//= require_tree .
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+//= require dataTables/extras/TableTools
+//= require dataTables/extras/ZeroClipboard
+//= require twitter/bootstrap
+//= require_tree .
 //= require bootstrap-datepicker/core

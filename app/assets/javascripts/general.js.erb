@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 
   $('#rezerwacje').dataTable({
-  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+  "sDom": "T<'row-fluid'>lfrt<'row-fluid'>ip",
   "sPaginationType": "bootstrap",
 
 
@@ -28,11 +28,57 @@ $(document).ready(function() {
                         "sNext":     "Następna",
                         "sLast":     "Ostatnia"
                         }
-                        }
+                      },
+                                                               <% @data = DateTime.now.to_date.strftime("%d-%m-%Y") %>
+
+                oTableTools: {
+                            // "sRowSelect": "multi",
+                         "aButtons": [
+                                {  
+                                    "sExtends": "xls",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.xls",
+                                    "sButtonText": "Excel",
+                                     "mColumns": "visible"
+                                }, 
+                                {  
+                                    "sExtends": "csv",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.csv",
+                                    "sButtonText": "CSV",
+                                     "mColumns": "visible"
+                                },
+                                  {  
+                                    "sExtends": "pdf",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.pdf",
+                                    "sButtonText": "PDF",
+                                     "mColumns": "visible"
+                                },
+                                {
+                                    "sExtends": "copy",
+                                    "sButtonText": "Skopiuj do schowka",
+
+                                }
+                                ,
+                                {
+                                    "sExtends": "print",
+                                    "sInfo": "<h2>Drukowanie</h2>Strona została oczyszczona i przygotowana do wydruku.</br>Wybierz opcję drukowania z menu przeglądarki.",
+                                    "sButtonText": "Wydrukuj"
+                                }
+                                // ,
+                                
+
+                                // { "sExtends": "editor_create","sButtonText": "Dodaj",  "editor": editor },
+                                // { "sExtends": "editor_edit", "sButtonText": "Edytuj",   "editor": editor },
+                                // { "sExtends": "editor_remove", "sButtonText": "Usuń", "editor": editor }                              
+                                ],
+           
+
+                 sSwfPath: "<%= asset_path("copy_csv_xls_pdf.swf") %>"
+              
+        }
                 
                       });
   $('#wycieczki').dataTable({
-  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+  "sDom": "T<'row-fluid'>lfrt<'row-fluid'>ip",
   "sPaginationType": "bootstrap",
 
 
@@ -52,11 +98,57 @@ $(document).ready(function() {
                         "sNext":     "Następna",
                         "sLast":     "Ostatnia"
                         }
-                        }
+                      },
+                                                                   <% @data = DateTime.now.to_date.strftime("%d-%m-%Y") %>
+
+                oTableTools: {
+                            // "sRowSelect": "multi",
+                         "aButtons": [
+                                {  
+                                    "sExtends": "xls",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.xls",
+                                    "sButtonText": "Excel",
+                                     "mColumns": "visible"
+                                }, 
+                                {  
+                                    "sExtends": "csv",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.csv",
+                                    "sButtonText": "CSV",
+                                     "mColumns": "visible"
+                                },
+                                  {  
+                                    "sExtends": "pdf",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.pdf",
+                                    "sButtonText": "PDF",
+                                     "mColumns": "visible"
+                                },
+                                {
+                                    "sExtends": "copy",
+                                    "sButtonText": "Skopiuj do schowka",
+
+                                }
+                                ,
+                                {
+                                    "sExtends": "print",
+                                    "sInfo": "<h2>Drukowanie</h2>Strona została oczyszczona i przygotowana do wydruku.</br>Wybierz opcję drukowania z menu przeglądarki.",
+                                    "sButtonText": "Wydrukuj"
+                                }
+                                // ,
+                                
+
+                                // { "sExtends": "editor_create","sButtonText": "Dodaj",  "editor": editor },
+                                // { "sExtends": "editor_edit", "sButtonText": "Edytuj",   "editor": editor },
+                                // { "sExtends": "editor_remove", "sButtonText": "Usuń", "editor": editor }                              
+                                ],
+           
+
+                 sSwfPath: "<%= asset_path("copy_csv_xls_pdf.swf") %>"
+              
+        }
                 
                       });
  $('#przystanki').dataTable({
-  "sDom": "<'row-fluid'<'span6'l><'span6'f>r>t<'row-fluid'<'span6'i><'span6'p>>",
+  "sDom": "T<'row-fluid'>lfrt<'row-fluid'>ip",
   "sPaginationType": "bootstrap",
 
 
@@ -76,7 +168,53 @@ $(document).ready(function() {
                         "sNext":     "Następna",
                         "sLast":     "Ostatnia"
                         }
-                        }
+                        },
+                                                <% @data = DateTime.now.to_date.strftime("%d-%m-%Y") %>
+
+                oTableTools: {
+                            // "sRowSelect": "multi",
+                         "aButtons": [
+                                {  
+                                    "sExtends": "xls",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.xls",
+                                    "sButtonText": "Excel",
+                                     "mColumns": "visible"
+                                }, 
+                                {  
+                                    "sExtends": "csv",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.csv",
+                                    "sButtonText": "CSV",
+                                     "mColumns": "visible"
+                                },
+                                  {  
+                                    "sExtends": "pdf",
+                                    "sFileName": "TabelaNormatywow-<%=  @data %>.pdf",
+                                    "sButtonText": "PDF",
+                                     "mColumns": "visible"
+                                },
+                                {
+                                    "sExtends": "copy",
+                                    "sButtonText": "Skopiuj do schowka",
+
+                                }
+                                ,
+                                {
+                                    "sExtends": "print",
+                                    "sInfo": "<h2>Drukowanie</h2>Strona została oczyszczona i przygotowana do wydruku.</br>Wybierz opcję drukowania z menu przeglądarki.",
+                                    "sButtonText": "Wydrukuj"
+                                }
+                                // ,
+                                
+
+                                // { "sExtends": "editor_create","sButtonText": "Dodaj",  "editor": editor },
+                                // { "sExtends": "editor_edit", "sButtonText": "Edytuj",   "editor": editor },
+                                // { "sExtends": "editor_remove", "sButtonText": "Usuń", "editor": editor }                              
+                                ],
+           
+
+                 sSwfPath: "<%= asset_path("copy_csv_xls_pdf.swf") %>"
+              
+        }
                 
                       });
 
