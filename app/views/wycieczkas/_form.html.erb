@@ -3,8 +3,9 @@
 
       <%= f.input :nazwa, collection: [ 'Praga','Praga Nocą','Skalne Miasto','Szwajcaria Saksońska', 'Drezno','Morawski Kras','Liberec', 'Wiedeń','Czeski Raj'], label: "Miejsce wycieczki", :prompt => "Wybierz miejsce wycieczki" %>
     
- 
       <%= f.input :data, as: :string, :class => 'text_field' %>
+      <%= f.input :updated_by, :as => :hidden, :input_html => { :value => current_user.id } %>
+
 	</div>
 	<div class="span12">
 	<div class="form-actions">

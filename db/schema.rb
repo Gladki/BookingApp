@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(:version => 20130619230404) do
 
   create_table "przystaneks", :force => true do |t|
     t.integer  "przystanek_id"
+    t.integer  "updated_by"
     t.string   "nazwa"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20130619230404) do
     t.string   "nrtelefonu"
     t.integer  "zaplacona"
     t.string   "uwagi"
+    t.integer  "updated_by"
     t.date     "dataUrodzenia"
     t.date     "datawycieczki"
     t.datetime "created_at",    :null => false
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20130619230404) do
   create_table "wycieczkas", :force => true do |t|
     t.integer  "wycieczka_id"
     t.string   "nazwa"
+    t.integer  "updated_by"
     t.date     "data"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false

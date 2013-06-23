@@ -43,6 +43,7 @@
        <div class="span3">
         <h5>Dane dodatkowe</h5>
        <%= f.input :email , label: "Adres Mailowy" , as: :email  %>
+      <%= f.input :updated_by, :as => :hidden, :input_html => { :value => current_user.id } %>
 
        </div>
        <div class="span12">

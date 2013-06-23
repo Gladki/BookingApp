@@ -18,7 +18,7 @@
 <%= link_to raw("<i class=\"icon-list\"></i> Lista"),
               przystaneks_index_path, :class => 'btn btn-warning'  %>
   <%= link_to raw("<i class=\"icon-edit\"></i> Edytuj"),
-              edit_przystanek_path(@przystanek), :class => 'btn btn-success' %>
+              przystanek_edytuj_path(@przystanek), :class => 'btn btn-success' %>
   <%= link_to raw("<i class=\"icon-remove\"></i> Usuń"),
               przystanek_path(@przystanek),
               :method => 'delete',

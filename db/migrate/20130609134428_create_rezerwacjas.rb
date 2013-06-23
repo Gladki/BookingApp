@@ -9,6 +9,7 @@ class CreateRezerwacjas < ActiveRecord::Migration
       t.string :nrtelefonu
       t.integer :zaplacona
       t.string :uwagi
+      t.integer :updated_by
       t.date :dataUrodzenia
       t.date :datawycieczki
 

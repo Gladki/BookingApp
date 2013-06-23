@@ -12,7 +12,7 @@ BookingApp::Application.routes.draw do
   match 'przystanki' => "przystaneks#index", :as => 'przystaneks_index'
   match 'przystanek/nowy' => "przystaneks#new", :as => 'new_przystanek'
   match 'przystanek/create' => "przystaneks#create", :as => 'przystaneks'
-  match 'przystanek/:id/edytuj' => "przystaneks#edit", :as => 'edit_przystanek'
+  match 'przystanek/:id/edytuj' => "przystaneks#edit", :as => 'przystanek_edytuj'
   match 'przystanek/:id' => 'przystaneks#show', :as => 'przystanek' 
   #WYCIECZKA
   match 'wycieczki' => "wycieczkas#index", :as => 'wycieczkas_index'

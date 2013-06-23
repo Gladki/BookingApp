@@ -7,6 +7,7 @@
   <thead>
     <tr>
     <th>Numer wycieczki</th>
+    <th>Stworzona przez</th>
       <th><%= model_class.human_attribute_name(:nazwa) %></th>
       <th><%= model_class.human_attribute_name(:data) %></th>
 
@@ -18,6 +19,7 @@
       <tr>
         <td><%= link_to "#{wycieczka.id}/#{Wycieczka.find_by_id(wycieczka.id).created_at.year}", wycieczka_path(wycieczka) %></td>
 
+        <td><%= User.find_by_id(wycieczka.updated_by).username %></td>
         <td><%= wycieczka.nazwa %></td>
         <td><%= wycieczka.data %></td>
 

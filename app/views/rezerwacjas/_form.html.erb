@@ -37,7 +37,7 @@
        </div>
        <div class="span12">
           <div class="form-actions ">
-
+      <%= f.input :updated_by, :as => :hidden, :input_html => { :value => current_user.id } %>
     <%= f.submit "Zatwierdź", :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 rezerwacjas_index_path, :class => 'btn' %>

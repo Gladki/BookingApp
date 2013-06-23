@@ -3,6 +3,7 @@ class CreateWycieczkas < ActiveRecord::Migration
     create_table :wycieczkas do |t|
       t.integer :wycieczka_id
       t.string :nazwa
+      t.integer :updated_by
       t.date :data
 
       t.timestamps
