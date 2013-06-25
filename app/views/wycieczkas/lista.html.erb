@@ -31,7 +31,7 @@
      %>
 
  <tr class="<%= @class %>">
-         <td><%= rezerwacja.przystaneks.id %></td>
+         <td><%= rezerwacja.przystaneks.first.id %></td>
         <td><%= link_to "#{User.find_by_id(rezerwacja.updated_by).username[0..2]}/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}", rezerwacja_pokaz_path(rezerwacja) %></td>
         <td><%= rezerwacja.imie %> </td>
         <td><%= rezerwacja.nazwisko %></td>
