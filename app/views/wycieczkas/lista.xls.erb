@@ -116,12 +116,12 @@
    x:FullRows="1" ss:DefaultColumnWidth="65" ss:DefaultRowHeight="15" ss:Border="1">
    <Column ss:Width="20"/>
    <Column ss:Width="110"/>
-   <Column ss:Width="70"/>
+   <Column ss:Width="150"/>
    <Column ss:Width="63"/>
    <Column ss:Width="79" ss:Span="1"/>
    <Column ss:Index="7" ss:Width="96"/>
    <Column ss:StyleID="s62" ss:Width="86"/>
-   <Column ss:AutoFitWidth="0" ss:Width="199"/>
+   <Column ss:AutoFitWidth="0" ss:Width="119"/>
    <Row ss:AutoFitHeight="0" ss:Height="26">
     <Cell ss:MergeAcross="8" ss:MergeDown="1" ss:StyleID="m706390908"><Data
       ss:Type="String">LISTA WYCIECZKI <%= FindWycieczkaByID(params[:id]).humanize %></Data></Cell>
@@ -140,10 +140,10 @@
    </Row>
    <% @i = 1 %>
    <% @rezerwacjas.each do |rezerwacja| %>
-   <Row ss:AutoFitHeight="0" ss:Height="26">
+   <Row ss:AutoFitHeight="0" ss:Height="30">
     <Cell ss:StyleID="s130"><Data ss:Type="Number"><%= @i %></Data></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String"><%= "#{User.find_by_id(rezerwacja.updated_by).username[0..2]}/#{rezerwacja.id}/#{Rezerwacja.find_by_id(rezerwacja.id).created_at.year}" %></Data></Cell>
-    <Cell ss:StyleID="s131"><Data ss:Type="String"><%= rezerwacja.przystaneks.first.id %></Data></Cell>
+    <Cell ss:StyleID="s131"><Data ss:Type="String"><%= rezerwacja.przystaneks.first.nazwa %></Data></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String"><%= rezerwacja.imie %></Data></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String"><%= rezerwacja.nazwisko %></Data></Cell>
     <Cell ss:StyleID="s131"><Data ss:Type="String"><%= rezerwacja.nrtelefonu %></Data></Cell>
