@@ -4,7 +4,7 @@
    <blockquote><p><big>Lista uczestników wycieczki: <%= FindWycieczkaByID(params[:id]).humanize %></big></p> </blockquote>
 </div>
 
-<%= link_to raw("<i class=\"icon-download-alt\"> Pobierz do Excela</i>"), lista_rezerwacji_path(format: "xls"), :class=>"btn  btn-success" %>
+<%= link_to raw("<i class=\"icon-download-alt\"></i> Pobierz do Excela"), lista_rezerwacji_path(format: "xls"), :class=>"btn btn-primary btn-success" %>
 <br><br>
 <table id="rezerwacje" class="table table-striped">
   <thead>
