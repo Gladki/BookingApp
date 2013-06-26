@@ -13,11 +13,12 @@ class WycieczkasController < ApplicationController
   end
 
   def lista 
+    @nazwa = Wycieczka.find_by_id(params[:id]).nazwa
     @rezerwacjas = Rezerwacja.find(:all, :conditions => {:nazwa => params[:id]})
-
     respond_to do |format|
       format.html # lista.html.erb
       format.json { render json: @rezerwacjas }
+      format.xls { response.headers['Content-Disposition'] = 'attachment; filename="' + Wycieczka.find_by_id(params[:id]).combined_value + '.xls"'}
     end
   end
   # GET /wycieczkas/1

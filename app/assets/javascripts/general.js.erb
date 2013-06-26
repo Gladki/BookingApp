@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 
   $('#rezerwacje').dataTable({
-  "sDom": "T<'row-fluid'>lfrt<'row-fluid'>ip",
+  "sDom": "<'row-fluid'>lfrt<'row-fluid'>ip",
   "sPaginationType": "bootstrap",
 
 
@@ -29,26 +29,37 @@ $(document).ready(function() {
                         "sLast":     "Ostatnia"
                         }
                       },
-                                                               <% @data = DateTime.now.to_date.strftime("%d-%m-%Y") %>
-
+               <% @data = DateTime.now.to_date.strftime("%d-%m-%Y") %>
                 oTableTools: {
                             // "sRowSelect": "multi",
                          "aButtons": [
                                 {  
                                     "sExtends": "xls",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.xls",
+                                    <% if @nazwa.nil? %>
+                                    "sFileName": "Lista-wycieczki-<%= @nazwa %>-<%=  @data %>.xls",
+                                    <% else %>
+                                    "sFileName": "Lista-wycieczki-<%=  @data %>.xls",
+                                    <% end %>                              
                                     "sButtonText": "Excel",
                                      "mColumns": "visible"
                                 }, 
                                 {  
                                     "sExtends": "csv",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.csv",
+                                    <% if @nazwa.nil? %>
+                                    "sFileName": "Lista-wycieczki-<%= @nazwa %>-<%=  @data %>.csv",
+                                    <% else %>
+                                    "sFileName": "Lista-wycieczki-<%=  @data %>.csv",
+                                    <% end %>
                                     "sButtonText": "CSV",
                                      "mColumns": "visible"
                                 },
                                   {  
                                     "sExtends": "pdf",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.pdf",
+                                    <% if @nazwa.nil? %>
+                                     "sFileName": "Lista-wycieczki-<%= @nazwa %>-<%=  @data %>.pdf",
+                                    <% else %>
+                                    "sFileName": "Lista-wycieczki-<%=  @data %>.pdf",
+                                    <% end %>
                                     "sButtonText": "PDF",
                                      "mColumns": "visible"
                                 },
@@ -99,6 +110,8 @@ $(document).ready(function() {
                         "sLast":     "Ostatnia"
                         }
                       },
+
+
                                                                    <% @data = DateTime.now.to_date.strftime("%d-%m-%Y") %>
 
                 oTableTools: {
@@ -106,19 +119,19 @@ $(document).ready(function() {
                          "aButtons": [
                                 {  
                                     "sExtends": "xls",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.xls",
+                                    "sFileName": "Lista-wycieczek-<%=  @data %>.xls",
                                     "sButtonText": "Excel",
                                      "mColumns": "visible"
                                 }, 
                                 {  
                                     "sExtends": "csv",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.csv",
+                                    "sFileName": "Lista-wycieczek-<%=  @data %>.csv",
                                     "sButtonText": "CSV",
                                      "mColumns": "visible"
                                 },
                                   {  
                                     "sExtends": "pdf",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.pdf",
+                                    "sFileName": "Lista-wycieczka-<%=  @data %>.pdf",
                                     "sButtonText": "PDF",
                                      "mColumns": "visible"
                                 },
@@ -176,19 +189,19 @@ $(document).ready(function() {
                          "aButtons": [
                                 {  
                                     "sExtends": "xls",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.xls",
+                                    "sFileName": "Przystanki.xls",
                                     "sButtonText": "Excel",
                                      "mColumns": "visible"
                                 }, 
                                 {  
                                     "sExtends": "csv",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.csv",
+                                    "sFileName": "Przystanki.csv",
                                     "sButtonText": "CSV",
                                      "mColumns": "visible"
                                 },
                                   {  
                                     "sExtends": "pdf",
-                                    "sFileName": "TabelaNormatywow-<%=  @data %>.pdf",
+                                    "sFileName": "Przystanki.pdf",
                                     "sButtonText": "PDF",
                                      "mColumns": "visible"
                                 },

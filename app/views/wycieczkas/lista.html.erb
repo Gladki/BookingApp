@@ -1,9 +1,11 @@
 <div class="span12">
-
 <%- model_class = Rezerwacja -%>
 <div class="page-header">
    <blockquote><p><big>Lista uczestników wycieczki: <%= FindWycieczkaByID(params[:id]).humanize %></big></p> </blockquote>
 </div>
+
+<%= link_to raw("<i class=\"icon-download-alt\"> Pobierz do Excela</i>"), lista_rezerwacji_path(format: "xls"), :class=>"btn btn-small btn-warning" %>
+<br><br>
 <table id="rezerwacje" class="table table-striped">
   <thead>
     <tr>
